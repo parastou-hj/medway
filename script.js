@@ -147,5 +147,87 @@
             });
     });
 
+  
+    $(document).ready(function(){
+        $(".product-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            rtl: true,
+            nav: false,
+            dots: false,
+            responsive:{
+              0:{
+                items:1.4
+              },
+              992:{
+                items:3.5
+              }
+            }
+        });
+          $('.baner-right').click(function() {
+                $('.baner').trigger('prev.owl.carousel');
+            });
+            
+            $('.baner-left').click(function() {
+                 $('.baner').trigger('next.owl.carousel');
+            });
+    });
+       $(document).ready(function(){
+        $(".product-carousel-two").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            ltr: true,
+            nav: false,
+            dots: false,
+            responsive:{
+              0:{
+                items:1.4
+              },
+              992:{
+                items:3.5
+              }
+            }
+        });
+          $('.baner-right').click(function() {
+                $('.baner').trigger('prev.owl.carousel');
+            });
+            
+            $('.baner-left').click(function() {
+                 $('.baner').trigger('next.owl.carousel');
+            });
+    });
+     $(document).ready(function(){
+        $(".blog-carousel").owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            rtl: true,
+            nav: false,
+            dots: false,
+         
+        });
+          $('.baner-right').click(function() {
+                $('.baner').trigger('prev.owl.carousel');
+            });
+            
+            $('.baner-left').click(function() {
+                 $('.baner').trigger('next.owl.carousel');
+            });
+    });
+function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
 
      
