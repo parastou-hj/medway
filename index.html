@@ -18,7 +18,7 @@
         </div>
         <div class="container-fluid header-container p-0">
             <div class="row header-back">
-                 <div class="row col-xl-10 header-top py-lg-2 px-lg-2" >
+                 <div class="row col-xl-10 header-top pt-lg-3 px-lg-2" >
               
                 <div class="col-lg-9  col-8  brand-logo">
                      <div class=" bar-menu justify-content-center align-items-center d-lg-none">
@@ -28,19 +28,95 @@
                         <img src="./images/logo.png" alt="">
                     </div>
                     <div class="search-input d-none d-lg-block">
-                        <input type="text" placeholder="جستجو برای محصولات ...">
+                        <input type="text" placeholder="محصول خود را جستجو کنید...">
                         <img src="./images/search.png" alt="">
                     </div>
                 </div>
                 <div class="col-lg-3  col-4 user-cart d-flex align-items-center">
+                     <div class="cart me-2">
+                        <img src="./images/cart.png" alt="" class="cart-img">
+                        <div class="cart-badge">
+                            <span>0</span>
+                        </div>
+                         <div class="cart-submenu">
+                            <div class="cart-header">
+                                <h3 class="cart-title">سبد خرید شما</h3>
+                                <span class="cart-items-count">2 محصول</span>
+                            </div>
+                            
+                            <div class="cart-items">
+                                <div class="cart-item">
+                                    <div class="cart-item-image">
+                                        <img src="./images/p-book.png" >
+                                    </div>
+                                    <div class="cart-item-details">
+                                        <h4 class="cart-item-title"> کتاب آشنایی آماری</h4>
+                                        <div class="cart-item-price">
+                                            <span class="item-quantity">1 ×</span>
+                                            <span class="item-price">255,000</span>
+                                            <span class="price-currency">تومان</span>
+                                        </div>
+                                    </div>
+                                    <button class="remove-item-btn">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                                  <div class="cart-item">
+                                    <div class="cart-item-image">
+                                        <img src="./images/p-book.png" >
+                                    </div>
+                                    <div class="cart-item-details">
+                                        <h4 class="cart-item-title"> کتاب آشنایی آماری</h4>
+                                        <div class="cart-item-price">
+                                            <span class="item-quantity">1 ×</span>
+                                            <span class="item-price">255,000</span>
+                                            <span class="price-currency">تومان</span>
+                                        </div>
+                                    </div>
+                                    <button class="remove-item-btn">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                                
+                                
+                                
+                            </div>
+                            
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <span class="total-label">مجموع:</span>
+                                    <div class="total-amount">
+                                        <span class="amount">600,000</span>
+                                        <span class="currency">تومان</span>
+                                    </div>
+                                </div>
+                                <div class="cart-actions">
+                                    <a href="#" class="view-cart-btn">مشاهده سبد خرید</a>
+                                    <a href="#" class="checkout-btn">تسویه حساب</a>
+                                </div>
+                            </div>
+                            
+                            
+                          
+                        </div>
+                        <!-- empty-cart -->
+                          <div class="empty-cart" style="display: none;">
+                                <div class="empty-cart-icon">
+                                    <i class="fa fa-shopping-basket"></i>
+                                </div>
+                                <p class="empty-cart-message">سبد خرید شما خالی است</p>
+                             
+                            </div>
+    
+                    </div>
                     <div class="user">
                         <div class="user-btn">
-                          <a href="#"><span class="d-none d-lg-block">ورود / ثبت نام</span></a>
-                          <img src="./images/user.png" alt="">
+                             <img src="./images/user.png" alt="">
+                          <a href="#"><span class="d-none d-lg-block">ورود | ثبت نام</span></a>
+                         
                         </div>
                           <div class="user-submenu">
-
-                            <div class="user-view" >
+                            <div class="user-view"  >
                                 <div class="user-submenu-header">
                                     <div class="user-avatar">
                                         <img src="./images/user.png" alt="عکس کاربر">
@@ -78,84 +154,34 @@
                                     </li>
                                 </ul>
                             </div>
+
+                            <!-- login-required-state -->
+                             <div class="login-required-state" style="display: none;">
+        
+                                <h3 class="login-title">ورود به حساب کاربری</h3>
+                                <p class="login-description">برای دسترسی به امکانات حساب کاربری، لطفاً وارد شوید.</p>
+                                
+                                <div class="login-actions">
+                                    <a href="#" class="login-primary-btn">
+                                        <i class="fa fa-sign-in-alt"></i>
+                                        <span>ورود</span>
+                                    </a>
+                                    <a href="#" class="register-secondary-btn">
+                                        <i class="fa fa-user-plus"></i>
+                                        <span>ثبت نام</span>
+                                    </a>
+                                </div>
+
+                            </div>
                         </div>
                         
                     </div>
-                    <div class="cart me-2">
-                        <img src="./images/cart.png" alt="" class="cart-img">
-                         <div class="cart-submenu">
-                            <div class="cart-header">
-                                <h3 class="cart-title">سبد خرید شما</h3>
-                                <span class="cart-items-count">2 محصول</span>
-                            </div>
-                            
-                            <div class="cart-items">
-                                <div class="cart-item">
-                                    <div class="cart-item-image">
-                                        <img src="./images/p1.png" alt="شیر برقی 36 ولت">
-                                    </div>
-                                    <div class="cart-item-details">
-                                        <h4 class="cart-item-title">درب اتاق</h4>
-                                        <div class="cart-item-price">
-                                            <span class="item-quantity">1 ×</span>
-                                            <span class="item-price">2,550,000</span>
-                                            <span class="price-currency">تومان</span>
-                                        </div>
-                                    </div>
-                                    <button class="remove-item-btn">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
-                                 <div class="cart-item">
-                                    <div class="cart-item-image">
-                                        <img src="./images/p1.png" alt="شیر برقی 36 ولت">
-                                    </div>
-                                    <div class="cart-item-details">
-                                        <h4 class="cart-item-title">درب اتاق</h4>
-                                        <div class="cart-item-price">
-                                            <span class="item-quantity">1 ×</span>
-                                            <span class="item-price">2,550,000</span>
-                                            <span class="price-currency">تومان</span>
-                                        </div>
-                                    </div>
-                                    <button class="remove-item-btn">
-                                        <i class="fa fa-times"></i>
-                                    </button>
-                                </div>
-                                
-                                
-                            </div>
-                            
-                            <div class="cart-footer">
-                                <div class="cart-total">
-                                    <span class="total-label">مجموع:</span>
-                                    <div class="total-amount">
-                                        <span class="amount">4,400,000</span>
-                                        <span class="currency">تومان</span>
-                                    </div>
-                                </div>
-                                <div class="cart-actions">
-                                    <a href="#" class="view-cart-btn">مشاهده سبد خرید</a>
-                                    <a href="#" class="checkout-btn">تسویه حساب</a>
-                                </div>
-                            </div>
-                            
-                            
-                            <div class="empty-cart" style="display: none;">
-                                <div class="empty-cart-icon">
-                                    <i class="fa fa-shopping-basket"></i>
-                                </div>
-                                <p class="empty-cart-message">سبد خرید شما خالی است</p>
-                                <a href="#" class="continue-shopping-btn">ادامه خرید</a>
-                            </div>
-                        </div>
-    
-                    </div>
+                   
                     
                 </div>
             </div>
             </div>
-             <div class=" header-down container-fluid p-0 py-2">
+             <div class=" header-down container-fluid p-0">
                 <div class="row col-xl-10 d-flex">
                     <!-- mobile-search -->
                      <div class="col-md-10 col-8 ">
@@ -165,23 +191,13 @@
                     </div>
                      </div>
 
-                  <div class="col-12 navs d-none d-lg-flex py-2">
+                  <div class="col-8 navs d-none d-lg-flex py-2">
                     <ul class="category p-0">
-                        <li>
+                        <li id="categoryBtn">
                             <img src="./images/category.png" alt="">
-                            <span class="fw-bold">دسته بندی محصولات</span>
-                              <div class="category-dropdown">
-                                <ul>
-                                    <li><a href="#">درب ایمنی ضد سرقت</a></li>
-                                    <li><a href="#">درب اتاق</a></li>
-                                    <li><a href="#">درب حیاط</a></li>
-                                    <li><a href="#">چهارچوب فلزی</a></li>
-                                    <li><a href="#">قفل و یراق آلات</a></li>
-                                    <li><a href="#">درب ضد آب</a></li>
-                                    <li><a href="#">درب آکوستیک</a></li>
-                                    
-                                </ul>
-                            </div>
+                            <span class="fw-bold">دسته بندی ها</span>
+                            <img src="./images/category-drop.png" alt="" class="me-auto">
+                               
                             
                         </li>
                     </ul>
@@ -212,6 +228,253 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="megamenu-dropdown" id="megamenuDropdown">
+            <button class="megamenu-close" id="closeBtn">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="megamenu-content">
+                <!-- Categories Sidebar -->
+                <div class="categories-sidebar">
+                    <div class="category-item active" data-category="university">
+                        <div class="category-item-content">
+                            <div class="category-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <span class="category-name">جزوات دانشگاهی</span>
+                        </div>
+                        <i class="fas fa-chevron-left category-arrow"></i>
+                    </div>
+
+                    <div class="category-item" data-category="medical">
+                        <div class="category-item-content">
+                            <div class="category-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <span class="category-name">کتاب‌های پزشکی</span>
+                        </div>
+                        <i class="fas fa-chevron-left category-arrow"></i>
+                    </div>
+
+                    <div class="category-item" data-category="test">
+                        <div class="category-item-content">
+                            <div class="category-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <span class="category-name">بانک تست</span>
+                        </div>
+                        <i class="fas fa-chevron-left category-arrow"></i>
+                    </div>
+
+                    <div class="category-item" data-category="ebook">
+                        <div class="category-item-content">
+                            <div class="category-icon">
+                                <i class="fas fa-tablet-alt"></i>
+                            </div>
+                            <span class="category-name">کتاب الکترونیک</span>
+                        </div>
+                        <i class="fas fa-chevron-left category-arrow"></i>
+                    </div>
+
+                    <div class="category-item" data-category="audio">
+                        <div class="category-item-content">
+                            <div class="category-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <span class="category-name">کتاب صوتی</span>
+                        </div>
+                        <i class="fas fa-chevron-left category-arrow"></i>
+                    </div>
+
+                    <div class="category-item" data-category="research">
+                        <div class="category-item-content">
+                            <div class="category-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <span class="category-name">مقالات و پژوهش</span>
+                        </div>
+                        <i class="fas fa-chevron-left category-arrow"></i>
+                    </div>
+                </div>
+
+                <!-- Subcategories Content -->
+                <div class="subcategories-content active" data-content="university">
+                    <div class="subcategory-header">
+                        <h3 class="subcategory-title">جزوات دانشگاهی</h3>
+                        <a href="#" class="view-all-link">
+                            <span>مشاهده همه</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+
+                    <div class="subcategory-grid">
+                        <div class="subcategory-column">
+                            <h4>رشته‌های فنی و مهندسی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">مهندسی کامپیوتر</a></li>
+                                <li><a href="#">مهندسی برق</a></li>
+                                <li><a href="#">مهندسی مکانیک</a></li>
+                                <li><a href="#">مهندسی عمران</a></li>
+                                <li><a href="#">مهندسی شیمی</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="subcategory-column">
+                            <h4>علوم پایه</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">ریاضیات</a></li>
+                                <li><a href="#">فیزیک</a></li>
+                                <li><a href="#">شیمی</a></li>
+                                <li><a href="#">زیست‌شناسی</a></li>
+                                <li><a href="#">آمار</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="subcategory-column">
+                            <h4>علوم انسانی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">روانشناسی</a></li>
+                                <li><a href="#">جامعه‌شناسی</a></li>
+                                <li><a href="#">مدیریت</a></li>
+                                <li><a href="#">حسابداری</a></li>
+                                <li><a href="#">اقتصاد</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="featured-banner">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/120" alt="پیشنهاد ویژه">
+                        </div>
+                        <div class="featured-content">
+                            <h5>🔥 جزوات جدید ترم جاری</h5>
+                            <p>دسترسی به جدیدترین جزوات دانشگاهی با تخفیف ویژه دانشجویان</p>
+                            <a href="#" class="featured-link">
+                                <span>مشاهده محصولات</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subcategories-content" data-content="medical">
+                    <div class="subcategory-header">
+                        <h3 class="subcategory-title">کتاب‌های پزشکی</h3>
+                        <a href="#" class="view-all-link">
+                            <span>مشاهده همه</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+
+                    <div class="subcategory-grid">
+                        <div class="subcategory-column">
+                            <h4>علوم پایه پزشکی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">آناتومی</a></li>
+                                <li><a href="#">فیزیولوژی</a></li>
+                                <li><a href="#">بیوشیمی</a></li>
+                                <li><a href="#">میکروب‌شناسی</a></li>
+                                <li><a href="#">پاتولوژی</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="subcategory-column">
+                            <h4>تخصص‌های بالینی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">داخلی</a></li>
+                                <li><a href="#">جراحی</a></li>
+                                <li><a href="#">اطفال</a></li>
+                                <li><a href="#">زنان و زایمان</a></li>
+                                <li><a href="#">روانپزشکی</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="subcategory-column">
+                            <h4>رشته‌های پیراپزشکی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">پرستاری</a></li>
+                                <li><a href="#">مامایی</a></li>
+                                <li><a href="#">تکنولوژی پرتوشناسی</a></li>
+                                <li><a href="#">فیزیوتراپی</a></li>
+                                <li><a href="#">علوم آزمایشگاهی</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="featured-banner">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/120" alt="کتاب‌های پزشکی">
+                        </div>
+                        <div class="featured-content">
+                            <h5>📚 کتاب‌های مرجع پزشکی</h5>
+                            <p>مجموعه کامل کتاب‌های پزشکی معتبر جهان با ترجمه فارسی</p>
+                            <a href="#" class="featured-link">
+                                <span>مشاهده محصولات</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subcategories-content" data-content="test">
+                    <div class="subcategory-header">
+                        <h3 class="subcategory-title">بانک تست</h3>
+                        <a href="#" class="view-all-link">
+                            <span>مشاهده همه</span>
+                            <i class="fas fa-arrow-left"></i>
+                        </a>
+                    </div>
+
+                    <div class="subcategory-grid">
+                        <div class="subcategory-column">
+                            <h4>آزمون‌های ورودی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">کنکور سراسری</a></li>
+                                <li><a href="#">کنکور کارشناسی ارشد</a></li>
+                                <li><a href="#">آزمون دکتری</a></li>
+                                <li><a href="#">المپیادها</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="subcategory-column">
+                            <h4>آزمون‌های تخصصی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">آیلتس - IELTS</a></li>
+                                <li><a href="#">تافل - TOEFL</a></li>
+                                <li><a href="#">جی آر ای - GRE</a></li>
+                                <li><a href="#">آزمون استخدامی</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="subcategory-column">
+                            <h4>آزمون‌های پزشکی</h4>
+                            <ul class="subcategory-list">
+                                <li><a href="#">آزمون دستیاری</a></li>
+                                <li><a href="#">بورد تخصصی</a></li>
+                                <li><a href="#">USMLE</a></li>
+                                <li><a href="#">آزمون علوم پایه</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="featured-banner">
+                        <div class="featured-image">
+                            <img src="https://via.placeholder.com/120" alt="بانک تست">
+                        </div>
+                        <div class="featured-content">
+                            <h5>✍️ آزمون‌های تستی جامع</h5>
+                            <p>هزاران تست طبقه‌بندی شده با پاسخ‌های تشریحی کامل</p>
+                            <a href="#" class="featured-link">
+                                <span>مشاهده محصولات</span>
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- محتوای بقیه دسته‌ها را می‌توانید به همین روش اضافه کنید -->
+            </div>
+        </div>
                 </div>
               
 
@@ -219,14 +482,14 @@
                 </div>
                 <div class=" search-res ">
                   <div class="search-input">
-                    <input type="text" placeholder="جستجو...">
+                    <input type="text" placeholder="محصول خود را جستجو کنید...">
                   </div>
                 </div>
-                <div class=" magnifi-res">
+                <!-- <div class=" magnifi-res">
                   <div>
                     <img src="./images/magnifi.png" alt="">
                   </div>
-                </div>
+                </div> -->
 
                
                 </div>

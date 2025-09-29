@@ -230,4 +230,60 @@ function scrollToTop() {
         }
 
 
+          const categoryBtn = document.getElementById('categoryBtn');
+        const megamenuDropdown = document.getElementById('megamenuDropdown');
+        const closeBtn = document.getElementById('closeBtn');
+        const categoryItems = document.querySelectorAll('.category-item');
+        const subcategoriesContents = document.querySelectorAll('.subcategories-content');
+
+        // Toggle Mega Menu
+        categoryBtn.addEventListener('click', function() {
+            megamenuDropdown.classList.toggle('active');
+            categoryBtn.classList.toggle('active');
+        });
+
+        // Close Mega Menu
+        closeBtn.addEventListener('click', function() {
+            megamenuDropdown.classList.remove('active');
+            categoryBtn.classList.remove('active');
+        });
+
+        // Close on outside click
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.megamenu-container')) {
+                megamenuDropdown.classList.remove('active');
+                categoryBtn.classList.remove('active');
+            }
+        });
+
+        // Category Item Click
+        categoryItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                categoryItems.forEach(i => i.classList.remove('active'));
+                
+                // Add active class to clicked item
+                this.classList.add('active');
+                
+                // Get category data
+                const category = this.getAttribute('data-category');
+                
+                // Hide all subcategories
+                subcategoriesContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected subcategory
+                const activeContent = document.querySelector(`[data-content="${category}"]`);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+            });
+        });
+
+        // Prevent close when clicking inside megamenu
+        megamenuDropdown.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
      
