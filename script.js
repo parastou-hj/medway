@@ -1,289 +1,246 @@
-   $(document).ready(function() {
+$(document).ready(function() {
+    // ========== Header Moving Function ==========
     const headerMoving = () => {
- 
-      const $header = $('header');
-      const $headerContainer = $('.header-container');
-      const $mainHeader = $('.header-back');
-      const $downHeader = $('.header-down');
-      const $advertise = $('.advertise');
-      const $resSearch = $('.res-search');
-      
-      
-      const resSearchHeight = $resSearch.outerHeight() || 0;
-      const downHeaderHeight = $downHeader.outerHeight() || 0;
-      const mainHeaderHeight = $mainHeader.outerHeight() || 0;
-      const adHeaderHeight = $advertise.outerHeight() || 0;
-  
-     
-      let lastScrollTop = 0;
-      let isHeaderVisible = true;
-      
-      
-      $mainHeader.removeClass('lg-header-up');
-      $downHeader.removeClass('header-hidden');
-      $resSearch.removeClass('header-hidden');
-      
-      
-      if (window.innerWidth > 992) {
-        console.log("Desktop mode activated");
+        const $header = $('header');
+        const $headerContainer = $('.header-container');
+        const $mainHeader = $('.header-back');
+        const $downHeader = $('.header-down');
+        const $advertise = $('.advertise');
+        const $resSearch = $('.res-search');
         
-        const headerHeight = mainHeaderHeight + downHeaderHeight;
-        const totalHeight = headerHeight + adHeaderHeight;
-        
-       
-        $headerContainer.css('height', headerHeight);
-        $('body').css('padding-top', totalHeight);
-        
-        // Scroll handler for desktop
-        $(window).off('scroll.headerDesktop').on('scroll.headerDesktop', function() {
-          const currentScroll = $(this).scrollTop();
-          
-       
-          if (currentScroll > 50) {
-           
-            if (currentScroll > lastScrollTop && isHeaderVisible) {
-              $mainHeader.addClass('lg-header-up');
-              $downHeader.addClass('header-hidden');
-              $headerContainer.css('height', mainHeaderHeight);
-              isHeaderVisible = false;
-              console.log("Desktop: Hiding header-down");
-            } 
-            
-            else if (currentScroll < lastScrollTop && !isHeaderVisible) {
-              $mainHeader.removeClass('lg-header-up');
-              $downHeader.removeClass('header-hidden');
-              $headerContainer.css('height', headerHeight);
-              isHeaderVisible = true;
-              console.log("Desktop: Showing header-down");
-            }
-          } else {
-            
-            $mainHeader.removeClass('lg-header-up');
-            $downHeader.removeClass('header-hidden');
-            $headerContainer.css('height', headerHeight);
-            isHeaderVisible = true;
-          }
-          
-          lastScrollTop = currentScroll;
-        });
-      } 
-      
-      else {
-        console.log("Mobile mode activated");
-        
-        const headerHeight = mainHeaderHeight + resSearchHeight;
-        const totalHeight = headerHeight + adHeaderHeight;
-        
-       
-        $headerContainer.css('height', headerHeight);
-        $('body').css('padding-top', totalHeight);
-        
-       
-        $(window).off('scroll.headerMobile').on('scroll.headerMobile', function() {
-          const currentScroll = $(this).scrollTop();
-          
-          if (currentScroll > 50) {
-            
-            if (currentScroll > lastScrollTop && isHeaderVisible) {
-              $mainHeader.addClass('lg-header-up');
-              $resSearch.addClass('header-hidden');
-              $headerContainer.css('height', mainHeaderHeight);
-              isHeaderVisible = false;
-              console.log("Mobile: Hiding res-search");
-            } 
-            
-            else if (currentScroll < lastScrollTop && !isHeaderVisible) {
-              $mainHeader.removeClass('lg-header-up');
-              $resSearch.removeClass('header-hidden');
-              $headerContainer.css('height', headerHeight);
-              isHeaderVisible = true;
-              console.log("Mobile: Showing res-search");
-            }
-          } else {
-            
-            $mainHeader.removeClass('lg-header-up');
-            $resSearch.removeClass('header-hidden');
-            $headerContainer.css('height', headerHeight);
-            isHeaderVisible = true;
-          }
-          
-          lastScrollTop = currentScroll;
-        });
-      }
-    };
-  
-    // Initialize on document ready
-    headerMoving();
+        const resSearchHeight = $resSearch.outerHeight() || 0;
+        const downHeaderHeight = $downHeader.outerHeight() || 0;
+        const mainHeaderHeight = $mainHeader.outerHeight() || 0;
+        const adHeaderHeight = $advertise.outerHeight() || 0;
     
-    // Reinitialize on window resize with debounce
-    let resizeTimer;
-    $(window).on('resize', function() {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
-        console.log("Window resized - reinitializing header behavior");
-        headerMoving();
-      }, 250);
-    });
-  });
- 
- 
- $(document).ready(function(){
-        $(".baner-owl").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            rtl: true,
-            nav: false,
-            dots: false
-        });
-          $('.baner-right').click(function() {
-                $('.baner').trigger('prev.owl.carousel');
-            });
+        let lastScrollTop = 0;
+        let isHeaderVisible = true;
+        
+        $mainHeader.removeClass('lg-header-up');
+        $downHeader.removeClass('header-hidden');
+        $resSearch.removeClass('header-hidden');
+        
+        if (window.innerWidth > 992) {
+            const headerHeight = mainHeaderHeight + downHeaderHeight;
+            const totalHeight = headerHeight + adHeaderHeight;
             
-            $('.baner-left').click(function() {
-                 $('.baner').trigger('next.owl.carousel');
-            });
-    });
-
-  
-    $(document).ready(function(){
-        $(".product-carousel").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            rtl: true,
-            nav: false,
-            dots: false,
-            responsive:{
-              0:{
-                items:1.4
-              },
-              992:{
-                items:3.5
-              }
-            }
-        });
-          $('.baner-right').click(function() {
-                $('.baner').trigger('prev.owl.carousel');
-            });
+            $headerContainer.css('height', headerHeight);
+            $('body').css('padding-top', totalHeight);
             
-            $('.baner-left').click(function() {
-                 $('.baner').trigger('next.owl.carousel');
+            $(window).off('scroll.headerDesktop').on('scroll.headerDesktop', function() {
+                const currentScroll = $(this).scrollTop();
+                
+                if (currentScroll > 50) {
+                    if (currentScroll > lastScrollTop && isHeaderVisible) {
+                        $mainHeader.addClass('lg-header-up');
+                        $downHeader.addClass('header-hidden');
+                        $headerContainer.css('height', mainHeaderHeight);
+                        isHeaderVisible = false;
+                    } else if (currentScroll < lastScrollTop && !isHeaderVisible) {
+                        $mainHeader.removeClass('lg-header-up');
+                        $downHeader.removeClass('header-hidden');
+                        $headerContainer.css('height', headerHeight);
+                        isHeaderVisible = true;
+                    }
+                } else {
+                    $mainHeader.removeClass('lg-header-up');
+                    $downHeader.removeClass('header-hidden');
+                    $headerContainer.css('height', headerHeight);
+                    isHeaderVisible = true;
+                }
+                
+                lastScrollTop = currentScroll;
             });
-    });
-       $(document).ready(function(){
-        $(".product-carousel-two").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            ltr: true,
-            nav: false,
-            dots: false,
-            responsive:{
-              0:{
-                items:1.4
-              },
-              992:{
-                items:3.5
-              }
-            }
-        });
-          $('.baner-right').click(function() {
-                $('.baner').trigger('prev.owl.carousel');
-            });
+        } else {
+            const headerHeight = mainHeaderHeight + resSearchHeight;
+            const totalHeight = headerHeight + adHeaderHeight;
             
-            $('.baner-left').click(function() {
-                 $('.baner').trigger('next.owl.carousel');
-            });
-    });
-     $(document).ready(function(){
-        $(".blog-carousel").owlCarousel({
-            items: 1,
-            loop: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplayHoverPause: true,
-            rtl: true,
-            nav: false,
-            dots: false,
-         
-        });
-          $('.baner-right').click(function() {
-                $('.baner').trigger('prev.owl.carousel');
-            });
+            $headerContainer.css('height', headerHeight);
+            $('body').css('padding-top', totalHeight);
             
-            $('.baner-left').click(function() {
-                 $('.baner').trigger('next.owl.carousel');
-            });
-    });
-function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            $(window).off('scroll.headerMobile').on('scroll.headerMobile', function() {
+                const currentScroll = $(this).scrollTop();
+                
+                if (currentScroll > 50) {
+                    if (currentScroll > lastScrollTop && isHeaderVisible) {
+                        $mainHeader.addClass('lg-header-up');
+                        $resSearch.addClass('header-hidden');
+                        $headerContainer.css('height', mainHeaderHeight);
+                        isHeaderVisible = false;
+                    } else if (currentScroll < lastScrollTop && !isHeaderVisible) {
+                        $mainHeader.removeClass('lg-header-up');
+                        $resSearch.removeClass('header-hidden');
+                        $headerContainer.css('height', headerHeight);
+                        isHeaderVisible = true;
+                    }
+                } else {
+                    $mainHeader.removeClass('lg-header-up');
+                    $resSearch.removeClass('header-hidden');
+                    $headerContainer.css('height', headerHeight);
+                    isHeaderVisible = true;
+                }
+                
+                lastScrollTop = currentScroll;
             });
         }
+    };
 
+    headerMoving();
+    
+    let resizeTimer;
+    $(window).on('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            headerMoving();
+        }, 250);
+    });
 
-          const categoryBtn = document.getElementById('categoryBtn');
-        const megamenuDropdown = document.getElementById('megamenuDropdown');
-        const closeBtn = document.getElementById('closeBtn');
-        const categoryItems = document.querySelectorAll('.category-item');
-        const subcategoriesContents = document.querySelectorAll('.subcategories-content');
+    // ========== Banner Carousel ==========
+    $(".baner-owl").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        rtl: true,
+        nav: false,
+        dots: false
+    });
 
-        // Toggle Mega Menu
-        categoryBtn.addEventListener('click', function() {
-            megamenuDropdown.classList.toggle('active');
-            categoryBtn.classList.toggle('active');
-        });
+    // ========== Product Carousel ==========
+    $(".product-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        rtl: true,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: { items: 1.4 },
+            992: { items: 3.5 }
+        }
+    });
 
-        // Close Mega Menu
-        closeBtn.addEventListener('click', function() {
-            megamenuDropdown.classList.remove('active');
-            categoryBtn.classList.remove('active');
-        });
+    $(".product-carousel-two").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        ltr: true,
+        nav: false,
+        dots: false,
+        responsive: {
+            0: { items: 1.4 },
+            992: { items: 3.5 }
+        }
+    });
 
-        // Close on outside click
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('.megamenu-container')) {
-                megamenuDropdown.classList.remove('active');
-                categoryBtn.classList.remove('active');
+    // ========== Blog Carousel ==========
+    $(".blog-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        rtl: true,
+        nav: false,
+        dots: false
+    });
+
+    // ========== MEGAMENU با HOVER و OVERLAY ==========
+    
+    // اضافه کردن overlay به body
+    if ($('.megamenu-overlay').length === 0) {
+        $('body').append('<div class="megamenu-overlay"></div>');
+    }
+
+    const $categoryBtn = $('#categoryBtn');
+    const $megamenuDropdown = $('#megamenuDropdown');
+    const $megamenuOverlay = $('.megamenu-overlay');
+    const $closeBtn = $('#closeBtn');
+    const $categoryItems = $('.category-item');
+    const $subcategoriesContents = $('.subcategories-content');
+
+    let hoverTimeout;
+
+    // Hover روی دکمه دسته‌بندی
+    $categoryBtn.on('mouseenter', function() {
+        clearTimeout(hoverTimeout);
+        hoverTimeout = setTimeout(function() {
+            $megamenuDropdown.addClass('active');
+            $categoryBtn.addClass('active');
+            $megamenuOverlay.addClass('active');
+        }, 200); // تاخیر 200ms برای جلوگیری از باز شدن ناخواسته
+    });
+
+    // Hover خارج از منو
+    $categoryBtn.add($megamenuDropdown).on('mouseleave', function(e) {
+        clearTimeout(hoverTimeout);
+        hoverTimeout = setTimeout(function() {
+            if (!$categoryBtn.is(':hover') && !$megamenuDropdown.is(':hover')) {
+                closeMegamenu();
             }
-        });
+        }, 300);
+    });
 
-        // Category Item Click
-        categoryItems.forEach(function(item) {
-            item.addEventListener('click', function() {
-                // Remove active class from all items
-                categoryItems.forEach(i => i.classList.remove('active'));
-                
-                // Add active class to clicked item
-                this.classList.add('active');
-                
-                // Get category data
-                const category = this.getAttribute('data-category');
-                
-                // Hide all subcategories
-                subcategoriesContents.forEach(content => {
-                    content.classList.remove('active');
-                });
-                
-                // Show selected subcategory
-                const activeContent = document.querySelector(`[data-content="${category}"]`);
-                if (activeContent) {
-                    activeContent.classList.add('active');
-                }
-            });
-        });
+    $megamenuDropdown.on('mouseenter', function() {
+        clearTimeout(hoverTimeout);
+    });
 
-        // Prevent close when clicking inside megamenu
-        megamenuDropdown.addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
 
-     
+    function closeMegamenu() {
+        $megamenuDropdown.removeClass('active');
+        $categoryBtn.removeClass('active');
+        $megamenuOverlay.removeClass('active');
+    }
+
+    // کلیک روی آیتم‌های دسته‌بندی
+    $categoryItems.each(function() {
+        $(this).on('mouseenter', function() {
+            // حذف active از همه آیتم‌ها
+            $categoryItems.removeClass('active');
+            
+            // اضافه کردن active به آیتم کلیک شده
+            $(this).addClass('active');
+            
+            // دریافت نام دسته‌بندی
+            const category = $(this).data('category');
+            
+            // مخفی کردن همه محتواها
+            $subcategoriesContents.removeClass('active');
+            
+            // نمایش محتوای انتخاب شده
+            $('[data-content="' + category + '"]').addClass('active');
+        });
+    });
+
+    // جلوگیری از بسته شدن با کلیک داخل megamenu
+    $megamenuDropdown.on('click', function(event) {
+        event.stopPropagation();
+    });
+
+    // بستن با کلیک خارج از منو
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.category, #megamenuDropdown').length) {
+            closeMegamenu();
+        }
+    });
+
+    // بستن با فشار دکمه Escape
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMegamenu();
+        }
+    });
+});
+
+// ========== Scroll to Top Function ==========
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}

@@ -1025,28 +1025,6 @@ z-index: 1;
     position: relative;
 }
 
-.nav > li > a:hover {
-    background-color: var(--primary-color);
-    color: white;
-     transition: all 0.3s ease;
-   
-}
-
-.nav > li > a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    width: 0;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: all 0.3s ease;
-    transform: translateX(50%);
-}
-
-.nav > li > a:hover::after {
-    width: 80%;
-}
 
 .has-submenu {
     position: relative;
@@ -1068,49 +1046,8 @@ z-index: 1;
     transform: rotate(180deg);
 }
 
-.nav .sub-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    background: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 1001;
-    margin-top: 5px;
-}
 
-.nav .has-submenu:hover .sub-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
 
-.sub-menu ul {
-    flex-direction: column;
-    padding: 8px 0;
-    list-style: none;
-    margin: 0;
-}
-
-.sub-menu li {
-    width: 100%;
-}
-
-.sub-menu a {
-    display: block !important;
-    padding: 10px 15px !important;
-    color: #333 !important;
-    font-size: 14px;
-    border-bottom: 1px solid #f5f5f5;
-    transition: all 0.2s ease;
-    border-radius: 0 !important;
-}
 
 .sub-menu a:hover {
     background-color: var(--primary-color) !important;
@@ -1146,16 +1083,198 @@ z-index: 1;
     padding: 6px;
     border-radius: 10px;
   }
-  .nav >li{
-    display: flex;
+
+  /* ==================== Navigation Items Modern Hover ==================== */
+.nav > li {
+    position: relative;
+    margin: 0 5px;
+}
+
+.nav > li > a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* ==================== Navigation Items Modern Hover ==================== */
+.nav > li {
+    position: relative;
+    margin: 0 5px;
+}
+
+.nav > li > a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+/* Bottom Border Animation */
+.nav > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    right: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--primary-color),
+        transparent 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(50%);
+    border-radius: 2px;
+}
+
+.nav > li > a:hover::after {
+    width: 70%;
+}
+
+
+/* Ripple Effect on Click */
+.nav > li > a {
+    position: relative;
+}
+
+/* ==================== Submenu Arrow for has-submenu ==================== */
+.has-submenu > a::before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f078";
+    font-weight: 900;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    transition: transform 0.3s ease;
+}
+
+.nav .has-submenu:hover > a::before {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* ==================== Submenu Modern Style ==================== */
+.nav .sub-menu {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    min-width: 220px;
+    background: white;
+    border: 2px solid rgba(77, 20, 140, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(77, 20, 140, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    overflow: hidden;
+}
+
+.nav .sub-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        hsl(266.25deg 88.89% 21.18%) 0%, 
+        hsl(304.44deg 100% 21.18%) 100%);
+}
+
+.nav .has-submenu:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.sub-menu ul {
+    flex-direction: column;
+    padding: 8px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.sub-menu li {
+    width: 100%;
+}
+
+.sub-menu a {
+    display: flex !important;
     align-items: center;
-    justify-content: center;
-    /* padding: 5px 25px; */
-  }
-  .nav >li a{
-    color:#333;
-    font-weight: 400;
-  }
+    padding: 12px 20px !important;
+    color: #333 !important;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-radius: 0 !important;
+    position: relative;
+}
+
+.sub-menu a::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(77, 20, 140, 0.1) 0%, 
+        rgba(174, 20, 140, 0.05) 100%);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.sub-menu a:hover::before {
+    width: 100%;
+}
+
+.sub-menu a:hover {
+    color: hsl(266.25deg 88.89% 21.18%) !important;
+    padding-right: 25px !important;
+    background: transparent !important;
+}
+
+.sub-menu a::after {
+    content: '\f060';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 8px;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    font-size: 12px;
+}
+
+.sub-menu a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sub-menu li:not(:last-child) {
+    border-bottom: 1px solid rgba(77, 20, 140, 0.05);
+}
+
+
 
 
   /* baner-sec */
@@ -1190,14 +1309,19 @@ z-index: 1;
   .baner-main-img{
     position: absolute;
     left: 0px;
-    bottom: 20px;
+    bottom: 5px;
   }
   .baner-title{
     position: absolute;
-     right: 20px;
+     right: 40px;
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
+    font-size: 1.8em;
+    font-family: IRANYekanWebExtraBold;
+  }
+  .awards-baner img{
+    width: 100%;
   }
   
 /* product-carousel */
@@ -1467,12 +1591,29 @@ height: 100%;
           }
 
           .footer-container{
-            background-color: var(--primary-color);
+            background-image: url(./images/footer-back.png);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
             border-top-left-radius: 25px;
             border-top-right-radius: 25px;
-
-              
             color: #fff;
+            position: relative;
+          }
+        
+          .footer-middle{
+            margin-top: 30px !important;
+          }
+          .footer-middle-top >div:first-child h4{
+            position: relative;
+          }
+          .footer-middle-top >div:first-child h4::before{
+            position: absolute;
+            content: '•';
+            width: 16px;
+            right: -10px;
+            top:2px;
+             color: #fff;
+             margin-left: 10px;
           }
           .footer-container a{
             color:#fff !important
@@ -1620,38 +1761,7 @@ height: 100%;
             position: relative;
         }
 
-        /* ==================== Category Button ==================== */
-        .category-btn {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, 
-                hsl(266.25deg 88.89% 21.18%) 0%, 
-                hsl(304.44deg 100% 21.18%) 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(77, 20, 140, 0.3);
-        }
-
-        .category-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(77, 20, 140, 0.4);
-        }
-
-        .category-btn i {
-            font-size: 18px;
-        }
-
-        .category-btn.active {
-            border-radius: 12px 12px 0 0;
-        }
-
+    
         /* ==================== Mega Menu Dropdown ==================== */
         .megamenu-dropdown {
             position: absolute;
@@ -1822,7 +1932,7 @@ height: 100%;
             background: linear-gradient(135deg, 
                 hsl(266.25deg 88.89% 21.18%) 0%, 
                 hsl(304.44deg 100% 21.18%) 100%);
-            color: white;
+            color: white !important;
             transform: translateX(-3px);
         }
 
@@ -1866,85 +1976,8 @@ height: 100%;
             padding-right: 12px;
         }
 
-        /* ==================== Featured Banner ==================== */
-        .featured-banner {
-            margin-top: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, 
-                rgba(77, 20, 140, 0.05) 0%, 
-                rgba(174, 20, 140, 0.05) 100%);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border: 2px solid rgba(77, 20, 140, 0.1);
-        }
-
-        .featured-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 12px;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .featured-content h5 {
-            font-size: 15px;
-            font-weight: 700;
-            color: hsl(266.25deg 88.89% 21.18%);
-            margin-bottom: 8px;
-        }
-
-        .featured-content p {
-            font-size: 13px;
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 12px;
-        }
-
-        .featured-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: hsl(304.44deg 100% 21.18%);
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-        .featured-link:hover {
-            gap: 10px;
-        }
-
-        /* ==================== Close Button ==================== */
-        .megamenu-close {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            width: 32px;
-            height: 32px;
-            background: rgba(77, 20, 140, 0.1);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: hsl(266.25deg 88.89% 21.18%);
-            transition: all 0.3s ease;
-        }
-
-        .megamenu-close:hover {
-            background: hsl(266.25deg 88.89% 21.18%);
-            color: white;
-            transform: rotate(90deg);
-        }
+        
+       
 
         /* ==================== Responsive ==================== */
         @media (max-width: 992px) {
@@ -1977,4 +2010,89 @@ height: 100%;
                 text-align: center;
             }
         }
-        
+        /* ==================== Megamenu Overlay ==================== */
+.megamenu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.megamenu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ==================== Mega Menu Dropdown Improvements ==================== */
+.megamenu-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: white;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 40px rgba(77, 20, 140, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.megamenu-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* بهبود ظاهر هنگام hover */
+#categoryBtn {
+    transition: all 0.3s ease;
+}
+
+#categoryBtn.active {
+  
+    box-shadow: 0 6px 25px rgba(77, 20, 140, 0.4);
+}
+
+/* ==================== Animations ==================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.megamenu-dropdown.active {
+    animation: fadeInDown 0.4s ease;
+}
+
+/* ==================== Responsive Overlay ==================== */
+@media (max-width: 1200px) {
+  .footer-last{
+    margin-right: 0px !important;
+  }
+}
+@media (max-width: 768px) {
+    .megamenu-overlay {
+        backdrop-filter: blur(2px);
+    }
+    
+    .megamenu-dropdown {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
