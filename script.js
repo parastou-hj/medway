@@ -96,21 +96,43 @@ $(document).ready(function() {
     });
 
     // ========== Banner Carousel ==========
-    $(".baner-owl").owlCarousel({
-        items: 1,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        rtl: true,
-        nav: false,
-        dots: false
-    });
+ $(document).ready(function(){
+            var articlesCarousel = $('.baner-owl').owlCarousel({
+                rtl: true,
+                loop: true,
+                margin: 10,
+                nav: false,
+                dots: false,
+                center: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 1000,
+               
+                responsive: {
+                    0: {
+                        items: 1,
+                        
+                    },
+                    
+                  
+                }
+            });
+            
+            
+            $('.baner-right').click(function() {
+                articlesCarousel.trigger('prev.owl.carousel');
+            });
+            
+            $('.baner-nav-left').click(function() {
+                articlesCarousel.trigger('next.owl.carousel');
+            });
+        });
 
     // ========== Product Carousel ==========
     $(".product-carousel").owlCarousel({
         items: 1,
-        loop: true,
+        loop: false,
         autoplay: true,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
@@ -118,18 +140,25 @@ $(document).ready(function() {
         nav: false,
         dots: false,
         responsive: {
-            0: { items: 1.6 },
+            0: { items: 2 },
             768: { items: 2.6 },
             820: { items: 2.8 },
             992: { items: 2.6 },
-            1200: { items: 3.1 },
-            1300: { items: 3.5 }
+            1200: { items: 2.8 },
+            1300: { items: 3.1 },
+             1450: { items: 3.5 }
         }
     });
-
+ $('.product-right').click(function() {
+               $(".product-carousel").trigger('prev.owl.carousel');
+            });
+            
+            $('.product-left').click(function() {
+                $(".product-carousel").trigger('next.owl.carousel');
+            });
     $(".product-carousel-two").owlCarousel({
         items: 1,
-        loop: true,
+        loop: false,
         autoplay: true,
         autoplayTimeout: 5000,
         autoplayHoverPause: true,
@@ -137,7 +166,7 @@ $(document).ready(function() {
         nav: false,
         dots: false,
         responsive: {
-            0: { items: 1.6 },
+            0: { items: 2},
             768: { items: 2.6 },
             820: { items: 2.8 },
             992: { items: 2.6 },
@@ -145,6 +174,14 @@ $(document).ready(function() {
             1300: { items: 3.5 }
         }
     });
+     $('.product-right').click(function() {
+               $(".product-carousel-two").trigger('prev.owl.carousel');
+            });
+            
+            $('.product-left').click(function() {
+                $(".product-carousel-two").trigger('next.owl.carousel');
+            });
+    
 
     // ========== Blog Carousel ==========
     $(".blog-carousel").owlCarousel({
@@ -211,16 +248,12 @@ $(document).ready(function() {
             // حذف active از همه آیتم‌ها
             $categoryItems.removeClass('active');
             
-            // اضافه کردن active به آیتم کلیک شده
             $(this).addClass('active');
             
-            // دریافت نام دسته‌بندی
             const category = $(this).data('category');
             
-            // مخفی کردن همه محتواها
             $subcategoriesContents.removeClass('active');
             
-            // نمایش محتوای انتخاب شده
             $('[data-content="' + category + '"]').addClass('active');
         });
     });
@@ -252,3 +285,64 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
+
+// ========== Mobile Off-Canvas Menu ==========
+$(document).ready(function() {
+    const $offcanvas = $('.mobile-offcanvas');
+    const $overlay = $('.mobile-offcanvas-overlay');
+    const $barMenu = $('.bar-menu');
+    const $closeBtn = $('.offcanvas-close');
+    const $body = $('body');
+    
+    $barMenu.on('click', function() {
+        $offcanvas.addClass('active');
+        $overlay.addClass('active');
+        $body.addClass('offcanvas-open');
+    });
+    
+    function closeOffcanvas() {
+        $offcanvas.removeClass('active');
+        $overlay.removeClass('active');
+        $body.removeClass('offcanvas-open');
+    }
+    
+    $closeBtn.on('click', closeOffcanvas);
+    $overlay.on('click', closeOffcanvas);
+    
+    $('.offcanvas-has-submenu > .offcanvas-submenu-toggle').on('click', function(e) {
+        e.preventDefault();
+        const $this = $(this);
+        const $submenu = $this.next('.offcanvas-submenu');
+        
+        $this.toggleClass('active');
+        $submenu.toggleClass('active');
+        
+        $('.offcanvas-has-submenu > .offcanvas-submenu-toggle').not($this).removeClass('active');
+        $('.offcanvas-submenu').not($submenu).removeClass('active');
+    });
+    
+    $('.offcanvas-megamenu-trigger > .offcanvas-submenu-toggle').on('click', function(e) {
+        e.preventDefault();
+        const $this = $(this);
+        const $megamenu = $this.next('.offcanvas-megamenu');
+        
+        $this.toggleClass('active');
+        $megamenu.toggleClass('active');
+    });
+    
+    $('.offcanvas-category-toggle').on('click', function(e) {
+        e.preventDefault();
+        const $this = $(this);
+        const $subcategory = $this.next('.offcanvas-subcategory');
+        
+        // Toggle active class
+        $this.toggleClass('active');
+        $subcategory.toggleClass('active');
+        
+        $('.offcanvas-category-toggle').not($this).removeClass('active');
+        $('.offcanvas-subcategory').not($subcategory).removeClass('active');
+    });
+    
+  
+});

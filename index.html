@@ -184,7 +184,7 @@
              <div class=" header-down container-fluid pb-2 p-lg-0">
                 <div class="row col-xl-10 d-flex">
                     <!-- mobile-search -->
-                     <div class="col-md-10 ">
+                     <div class="col-lg-10 px-0">
                          <div class="search-input res-search d-lg-none">
                         <input type="text" placeholder="جستجو برای محصولات ...">
                         <img src="./images/search.png" alt="">
@@ -432,14 +432,126 @@
                
                 </div>
         </div>
+        <div class="mobile-offcanvas-overlay"></div>
+
+        <!-- mobile-nav -->
+<div class="mobile-offcanvas">
+    <div class="offcanvas-header">
+        <div class="offcanvas-logo">
+            <img src="./images/footer-logo.png" alt="لوگو">
+        </div>
+        <button class="offcanvas-close">
+            <i class="fa fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="offcanvas-body">
+        <ul class="offcanvas-nav">
+            <li><a href="">صفحه اصلی</a></li>
+            <!-- Mega Menu Categories -->
+            <li class="offcanvas-megamenu-trigger">
+                <a href="#" class="offcanvas-submenu-toggle">
+                    <img src="./images/category.png" alt="" style="width: 20px; margin-left: 8px;">
+                    دسته بندی ها
+                    <i class="fa fa-chevron-down"></i>
+                </a>
+                <ul class="offcanvas-megamenu">
+                    <!-- University Category -->
+                    <li class="offcanvas-category-item">
+                        <a href="#" class="offcanvas-category-toggle">
+                            <div class="offcanvas-category-header">
+                                <i class="fas fa-book"></i>
+                                <span>جزوات دانشگاهی</span>
+                            </div>
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="offcanvas-subcategory">
+                            <li class="offcanvas-subcategory-group">
+                                <h4>رشته‌های فنی و مهندسی</h4>
+                                <ul>
+                                    <li><a href="#">مهندسی کامپیوتر</a></li>
+                                    <li><a href="#">مهندسی برق</a></li>
+                                    <li><a href="#">مهندسی مکانیک</a></li>
+                                    <li><a href="#">مهندسی عمران</a></li>
+                                    <li><a href="#">مهندسی شیمی</a></li>
+                                </ul>
+                            </li>
+                          
+                           
+                        </ul>
+                    </li>
+
+                    <!-- Medical Category -->
+                    <li class="offcanvas-category-item">
+                        <a href="#" class="offcanvas-category-toggle">
+                            <div class="offcanvas-category-header">
+                                <i class="fas fa-stethoscope"></i>
+                                <span>کتاب‌های پزشکی</span>
+                            </div>
+                            <i class="fa fa-chevron-down"></i>
+                        </a>
+                        <ul class="offcanvas-subcategory">
+                            <li class="offcanvas-subcategory-group">
+                                <h4>علوم پایه پزشکی</h4>
+                                <ul>
+                                    <li><a href="#">آناتومی</a></li>
+                                    <li><a href="#">فیزیولوژی</a></li>
+                                    <li><a href="#">بیوشیمی</a></li>
+                                    <li><a href="#">میکروب‌شناسی</a></li>
+                                    <li><a href="#">پاتولوژی</a></li>
+                                </ul>
+                            </li>
+                           
+                        </ul>
+                    </li>
+
+                   
+                </ul>
+            </li>
+            <li><a href="">مقالات</a></li>
+            <li><a href="">پروژه ها</a></li>
+            <li><a href="">تماس با ما</a></li>
+            
+            <li class="offcanvas-has-submenu">
+                <a href="#" class="offcanvas-submenu-toggle">
+                    درباره ما
+                    <i class="fa fa-chevron-down"></i>
+                </a>
+                <ul class="offcanvas-submenu">
+                    <li><a href="#">تاریخچه شرکت</a></li>
+                    <li><a href="#">مدیریت و کارکنان</a></li>
+                    <li><a href="#">ماموریت و چشم انداز</a></li>
+                    <li><a href="#">گواهینامه ها</a></li>
+                    <li><a href="#">افتخارات</a></li>
+                    <li><a href="#">فرصت های شغلی</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="">پرداخت آسان</a></li>
+            <li><a href="">سفارش آسان</a></li>
+            
+            
+        </ul>
+    </div>
+    
+ 
+</div>
+<div class="fix-items d-flex flex-column">
+    <a href="">
+        <img src="./images/fix-whats.png" alt="">
+    </a>
+    <a href="">
+        <img src="./images/fix-chat.png" alt="">
+    </a>
+</div>
       
     </header>
     <main>
         <!-- baner-sec -->
          <div class="baner-sec container-fluid my-2 px-0">
             <div class="row col-xl-10">
-                <div class="col-9 px-1">
-                    <div class="baner-carousel">
+                <div class="col-9">
+                    <div class="baner-carousel position-relative">
                         <div class="owl-carousel owl-theme baner-owl">
                             <div class="baner-item position-relative">
                                 <img src="./images/baner1.png" alt="">
@@ -449,10 +561,22 @@
                                     <a href="">دانلود فایل pdf</a>
                                 </div>
                             </div>
+                            <div class="baner-item position-relative">
+                                <img src="./images/baner1.png" alt="">
+                                <div class="baner-txt">
+                                    <h1>کسب درآمد از فروش اینترنتی فایل های کتاب و جزوه</h1>
+                                    <p>دسترسی به صدها کتاب الکترونیکی و صوتی، هرجا که هستی</p>
+                                    <a href="">دانلود فایل pdf</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="baner-nav">
+                            <img src="./images/baner-right.png" alt="" class="baner-right">
+                            <img src="./images/baner-nav-left.png" alt="" class="baner-nav-left">
                         </div>
                     </div>
                 </div>
-                <div class="col-3 px-1 px-sm-auto">
+                <div class="col-3">
                     <div class="baner-left">
                         <img src="./images/baner-left.png" alt="">
                     </div>
@@ -461,27 +585,33 @@
          </div>
 
          <!-- baners -->
-          <div class="baners-sec container-fluid my-lg-5 my-3 main-category-section px-0">
+          <div class="baners-sec container-fluid my-lg-5 mb-4 main-category-section px-0">
             <div class="row col-xl-10">
-                <div class="col-4 px-1 px-lg-auto">
+                <div class="col-4 px-1 px-lg-3">
                     <div class="baner-img position-relative">
-                        <img src="./images/baner-back1.png" alt="" class="baner-back">
+                        <a href="">
+                            <img src="./images/baner-back1.png" alt="" class="baner-back">
                         <img src="./images/baner-img1.png" alt="" class="baner-main-img">
                         <h1 class="baner-title">بانک تست</h1>
+                        </a>
                     </div>
                 </div>
-                 <div class="col-4 px-1 px-lg-auto">
+                 <div class="col-4 px-1 px-lg-3">
                     <div class="baner-img position-relative">
-                        <img src="./images/baner-back2.png" alt="" class="baner-back">
+                        <a href="">
+                            <img src="./images/baner-back2.png" alt="" class="baner-back">
                         <img src="./images/baner-img2.png" alt="" class="baner-main-img">
                         <h1 class="baner-title">درسنامه</h1>
+                        </a>
                     </div>
                 </div>
-                 <div class="col-4 px-1 px-lg-auto">
+                 <div class="col-4 px-1 px-lg-3">
                     <div class="baner-img position-relative">
-                        <img src="./images/baner-back3.png" alt="" class="baner-back">
+                       <a href="">
+                         <img src="./images/baner-back3.png" alt="" class="baner-back">
                         <img src="./images/baner-img3.png" alt="" class="baner-main-img">
                         <h1 class="baner-title">جمع بندی</h1>
+                       </a>
                     </div>
                 </div>
             </div>
@@ -508,8 +638,70 @@
                        
                     </div>
                     <div class="col-xl-10 col-sm-9 col-8 product-col pb-lg-3 pb-0 px-0">
+                        <img src="./images/product-nav.png" alt="" class="product-left d-none d-lg-flex">
+                        <img src="./images/product-right.png" alt="" class="product-right d-none d-lg-flex">
                         <div class="owl-carousel owl-theme product-carousel">
                             <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/product-img.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                                 <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/product-img.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                                 <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/product-img.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                                 <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/product-img.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                                 <div class="product-item  p-2">
                                 <div class="product-card">
                                  <a href="">
                                        <div class="product-img">
@@ -536,12 +728,74 @@
               
                 <div class="row col-xl-10 px-0">
                      <div class="col-xl-10 col-sm-9 col-8  product-col-two pb-lg-3 pb-0 px-0">
+                           <img src="./images/product-nav.png" alt="" class="product-left d-none d-lg-flex">
+                        <img src="./images/product-right.png" alt="" class="product-right d-none d-lg-flex">
                         <div class="owl-carousel owl-theme product-carousel-two ">
                             <div class="product-item  p-2">
                                 <div class="product-card">
                                  <a href="">
                                        <div class="product-img">
                                         <img src="./images/p-book.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                             <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/p-2.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                             <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/p-3.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                             <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/p-book.png" alt="کتاب">
+                                    </div>
+                                    <div class="product-info">
+                                    <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
+                                    </div>
+                                    <div class="price-btn">
+                                    ۳۲,۵۰۰ تومان
+                                    </div>
+                                 </a>
+                                </div>
+                            </div>
+                            <div class="product-item  p-2">
+                                <div class="product-card">
+                                 <a href="">
+                                       <div class="product-img">
+                                        <img src="./images/p-3.png" alt="کتاب">
                                     </div>
                                     <div class="product-info">
                                     <h1>کتاب شناسایی آماری الگو pdf (سه جلد)</h1>
@@ -718,7 +972,7 @@
             </div>
             <div class="row col-xl-10 pt-1">
                 <div class="row footer-middle pt-5">
-                    <div class="col-lg-4 px-0">
+                    <div class="col-lg-4 px-0 d-flex flex-column justify-content-between"">
                          <div class="footer-middle-top d-flex">
                             <div class="footer-column">
                 <input type="checkbox" id="why-toggle" class="accordion-toggle">
@@ -746,21 +1000,52 @@
                         </div>
                          </div>
                          <div class="socials mt-4 mt-lg-0">
-                            <a href="">
-                                <img src="./images/linkd.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="./images/aparat.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="./images/telg.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="./images/whats.png" alt="">
-                            </a>
-                            <a href="">
-                                <img src="./images/yube.png" alt="">
-                            </a>
+                            <ul class="social-icons px-0">
+                    <li><a href="#" >
+                        <span class="flip">
+                              <img src="./images/linkd.png" alt="">
+                        </span>
+                        <span class="flop">
+                            <img src="./images/linkd.png" alt="">
+                        </span>
+                      
+                    </a></li>
+                      <li><a href="#" >
+                         <span class="flip">
+                              <img src="./images/aparat.png" alt="">
+                        </span>
+                        <span class="flop">
+                            <img src="./images/aparat.png" alt="">
+                        </span>
+                     
+                    </a></li>
+                      <li><a href="#" >
+                         <span class="flip">
+                              <img src="./images/telg.png" alt="">
+                        </span>
+                        <span class="flop">
+                            <img src="./images/telg.png" alt="">
+                        </span>
+                    </a></li>
+                      <li><a href="#" >
+                         <span class="flip">
+                              <img src="./images/whats.png" alt="">
+                        </span>
+                        <span class="flop">
+                            <img src="./images/whats.png" alt="">
+                        </span>
+                    </a></li>
+                      <li><a href="#" >
+                          <span class="flip">
+                              <img src="./images/yube.png" alt="">
+                        </span>
+                        <span class="flop">
+                            <img src="./images/yube.png" alt="">
+                        </span>
+                    </a></li>
+                     
+                    
+                </ul>
                          </div>
                     </div>
                     <div class="col-lg-8 my-4 my-lg-0">
@@ -772,7 +1057,7 @@
                             </div>
                             <div class="col-sm-3 col-12 d-flex justify-content-lg-end justify-content-center" >
                                 <a href="" class="read-about-us d-flex my-3 my-lg-0">
-                                    <span>درباره ما بخوانید</span>
+                                    <span>دربـاره ما بخوانیــد</span>
                                    <div class="about-img px-2">
                                      <img src="./images/blog-flesh.png" alt="">
                                    </div>

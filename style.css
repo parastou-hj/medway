@@ -11,8 +11,8 @@ body{
     src: url(./font/iranyekanwebregularfanum.ttf);
   }
   @font-face {
-    font-family: iranSensBold;
-    src: url(./font/iransansdnwebbold.ttf);
+    font-family: arabic;
+    src: url(./font/arabic.otf);
   }
   @font-face {
     font-family: IRANYekanWebExtraBlack;
@@ -29,6 +29,10 @@ body{
   @font-face {
     font-family: IRANYekanWebRegular;
     src: url(./font/IRANYekanWebRegular.ttf);
+  }
+   @font-face {
+    font-family: IRANYekanWebLight;
+    src: url(./font/IRANYekanWebLight.ttf);
   }
   
 a{
@@ -1088,21 +1092,21 @@ z-index: 1;
 .nav > li > a::after {
     content: '';
     position: absolute;
-    bottom: 5px;
+    bottom: 0px;
     right: 50%;
     width: 0;
     height: 3px;
     background: linear-gradient(90deg, 
-        transparent 0%,
+        hsl(304.44deg 100% 21.18%),
         var(--primary-color),
-        transparent 100%);
+        hsl(304.44deg 100% 21.18%));
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     transform: translateX(50%);
     border-radius: 2px;
 }
 
 .nav > li > a:hover::after {
-    width: 70%;
+    width: 80%;
 }
 
 
@@ -1220,6 +1224,16 @@ z-index: 1;
 
 
   /* baner-sec */
+  .baner-nav{
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    z-index: 1000;
+  }
+  .baner-nav img{
+    cursor: pointer;
+    width: 40px;
+  }
   .baner-item{
     border-radius: 25px;
   }
@@ -1232,16 +1246,31 @@ z-index: 1;
     color: #fff;
   }
   .baner-txt h1{
-    text-align: justify;
-    font-family: iranSensBold;;
+    /* text-align: justify; */
+    font-family: arabic;
+    font-size: 2.2em;
+    line-height: 1.7;
   }
   .baner-txt p{
     margin-bottom: 30px !important;
+    margin-top: 10px;
   }
   .baner-txt a{
     background-color: #fff;
     padding: 10px 30px;
     border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1em;
+     transition: all .3s ;
+  }
+  .baner-txt a:hover{
+    background-color: var(--primary-color);
+    color: #fff !important;
+    transition: all .3s ;
+    box-shadow: 0px 0px 20px 2px rgba(37, 0, 37, 0.397);
+  }
+  .baner-left{
+    padding-bottom: 18px;
   }
   .baner-left img{
     width: 100%;
@@ -1263,8 +1292,9 @@ z-index: 1;
     top: 50%;
     transform: translateY(-50%);
     color: #fff;
-    font-size: 1.8em;
-    font-family: IRANYekanWebExtraBold;
+    font-size: 1.9em;
+    text-shadow: 0px 2px 2px #1a1818;
+    font-family: arabic;
   }
   .awards-baner img{
     width: 100%;
@@ -1297,11 +1327,53 @@ height: 100%;
 .title-txt h3{
   color: #fff;
   font-size: 1.4em;
- font-family: IRANYekanWebExtraBold;
+ font-family: arabic;
 
 }
 .product-col{
   padding-right: 80px !important;
+  position: relative;
+}
+.product-col:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 15%;
+  /* تغییر به گرادیانت برای ایجاد افکت هاله نور */
+  background: linear-gradient(to right, rgba(255,255,255,0.8), rgba(255,255,255,0));
+  z-index: 10000;
+}
+.product-left{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 170px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+.product-right{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 120px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 10000;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  cursor: pointer;
+}
+.product-col-two .product-left{
+  left:40px
+}
+.product-col-two .product-right{
+  right:160px
 }
    .product-card {
      
@@ -1372,7 +1444,19 @@ height: 100%;
     .product-col-two{
       direction: ltr;
       /* padding-left: 70px; */
+      position: relative;
     }
+    .product-col-two:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 15%;
+  /* تغییر به گرادیانت برای ایجاد افکت هاله نور */
+  background: linear-gradient(to right,  rgba(255,255,255,0),rgba(255,255,255,0.8));
+  z-index: 10000;
+}
     .product-carousel-two .product-img img{
       object-fit: scale-down;
     }
@@ -1620,27 +1704,25 @@ height: 100%;
           background-color: hsl(262.11deg 40% 37.25%);
           border-radius: 15px;
           padding: 10px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          width: 95%;
         
         }
-        .socials a{
-          background-color: hsl(304.44deg 100% 21.18%);
-          width: 40px;
-          height: 40px;
-          padding: 12px;
-          border-radius: 50%;
-            display: flex;
-          justify-content: center;
+        .social-icons{
+              display: flex;
+          justify-content: space-between;
           align-items: center;
+          margin-bottom: 0px;
         }
+       
         .read-about-us{
           width: 100px;
         }
 
         .about-us p{
           text-align: justify;
+          font-family: IRANYekanWebLight;
+          color: #dfdbdb;
+          line-height: 1.8;
         }
         
         .read-about-us span{
@@ -2002,7 +2084,7 @@ height: 100%;
     padding: 10px;
       }
      .services{
-      padding: 0px 80px;
+      padding: 0px 80px !important;
      }
      .services .col-6:nth-child(2), .services .col-6:nth-child(4){
       justify-content: end;
@@ -2182,13 +2264,376 @@ height: 100%;
   text-align: left;
 }
 
+
+
+
+/* ==================== Mobile Off-Canvas Menu ==================== */
+.mobile-offcanvas-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.mobile-offcanvas-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-offcanvas {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    max-width: 350px;
+    height: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f5ff 100%);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease-in-out;
+    z-index: 10001;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.mobile-offcanvas.active {
+    right: 0;
+}
+
+/* ==================== Off-Canvas Header ==================== */
+.offcanvas-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(135deg, 
+        hsl(266.25deg 88.89% 21.18%) 0%, 
+        hsl(304.44deg 100% 21.18%) 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-logo {
+    width: 100px;
+}
+
+.offcanvas-logo img {
+    width: 100%;
+    height: auto;
+}
+
+.offcanvas-close {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offcanvas-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+/* ==================== Off-Canvas Body ==================== */
+.offcanvas-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+.offcanvas-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.offcanvas-body::-webkit-scrollbar-track {
+    background: rgba(77, 20, 140, 0.05);
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background: hsl(266.25deg 88.89% 21.18%);
+    border-radius: 10px;
+}
+
+/* ==================== Off-Canvas Navigation ==================== */
+.offcanvas-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offcanvas-nav > li {
+    border-bottom: 1px solid rgba(77, 20, 140, 0.08);
+}
+
+.offcanvas-nav > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.offcanvas-nav > li > a:hover {
+    background: rgba(77, 20, 140, 0.05);
+    color: hsl(266.25deg 88.89% 21.18%);
+    padding-right: 25px;
+}
+
+/* ==================== Off-Canvas Submenu (درباره ما) ==================== */
+.offcanvas-has-submenu > .offcanvas-submenu-toggle {
+    position: relative;
+}
+
+.offcanvas-submenu-toggle i {
+    transition: transform 0.3s ease;
+    font-size: 12px;
+    margin-right: auto;
+}
+
+.offcanvas-submenu-toggle.active i {
+    transform: rotate(180deg);
+}
+
+.offcanvas-submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(77, 20, 140, 0.03);
+    transition: max-height 0.4s ease;
+}
+
+.offcanvas-submenu.active {
+    max-height: 500px;
+}
+
+.offcanvas-submenu li a {
+    display: block;
+    padding: 12px 20px 12px 40px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border-right: 3px solid transparent;
+}
+
+.offcanvas-submenu li a:hover {
+    background: rgba(77, 20, 140, 0.08);
+    color: hsl(266.25deg 88.89% 21.18%);
+    border-right-color: hsl(266.25deg 88.89% 21.18%);
+    padding-right: 45px;
+}
+
+/* ==================== Off-Canvas Mega Menu ==================== */
+.offcanvas-megamenu-trigger > .offcanvas-submenu-toggle {
+    background: linear-gradient(135deg, 
+        rgba(77, 20, 140, 0.08) 0%, 
+        rgba(174, 20, 140, 0.08) 100%);
+}
+
+.offcanvas-megamenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(77, 20, 140, 0.02);
+    transition: max-height 0.4s ease;
+}
+
+.offcanvas-megamenu.active {
+    max-height: 2000px;
+}
+
+.offcanvas-category-item {
+    border-bottom: 1px solid rgba(77, 20, 140, 0.08);
+}
+
+.offcanvas-category-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px !important;
+    color: #333 !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.offcanvas-category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.offcanvas-category-header i {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, 
+        rgba(77, 20, 140, 0.1) 0%, 
+        rgba(174, 20, 140, 0.1) 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(266.25deg 88.89% 21.18%);
+    font-size: 14px;
+}
+
+.offcanvas-category-toggle i.fa-chevron-down {
+    width: auto;
+    height: auto;
+    background: none;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+    color: #999;
+}
+
+.offcanvas-category-toggle.active i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.offcanvas-subcategory {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(77, 20, 140, 0.02);
+    transition: max-height 0.4s ease;
+}
+
+.offcanvas-subcategory.active {
+    max-height: 1000px;
+}
+
+.offcanvas-subcategory-group {
+    padding: 15px 40px;
+    border-bottom: 1px solid rgba(77, 20, 140, 0.05);
+}
+
+.offcanvas-subcategory-group:last-child {
+    border-bottom: none;
+}
+
+.offcanvas-subcategory-group h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: hsl(266.25deg 88.89% 21.18%);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid rgba(77, 20, 140, 0.1);
+}
+
+.offcanvas-subcategory-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offcanvas-subcategory-group ul li {
+    margin-bottom: 8px;
+}
+
+.offcanvas-subcategory-group ul li a {
+    display: block;
+    padding: 8px 10px;
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border-right: 0;
+}
+
+.offcanvas-subcategory-group ul li a:hover {
+    background: rgba(77, 20, 140, 0.08);
+    color: hsl(266.25deg 88.89% 21.18%);
+    padding-right: 15px;
+}
+
+/* ==================== Show Bar Menu on Mobile ==================== */
+@media (max-width: 992px) {
+  .user-btn img {
+    margin-left: 0px;
+    
+}
+.user-btn{
+  justify-content: center;
+}
+.user a{
+  margin-left: 0px;
+}
+.brand-img{
+  padding-right: 0px;
+}
+   
+    .bar-menu {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, 
+            hsl(266.25deg 88.89% 21.18%) 0%, 
+            hsl(304.44deg 100% 21.18%) 100%);
+        border-radius: 10px;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .bar-menu:hover {
+        box-shadow: 0 4px 12px rgba(77, 20, 140, 0.3);
+        transform: translateY(-2px);
+    }
+    
+    .bar-menu i {
+        color: white;
+        font-size: 20px;
+    }
+}
+
+/* ==================== Prevent Body Scroll When Menu Open ==================== */
+body.offcanvas-open {
+    overflow: hidden;
+}
+
 /* ==================== Responsive Overlay ==================== */
+@media (max-width: 1350px) {
+  .product-col{
+    padding-right: 125px !important;
+  }
+}
 @media (max-width: 1200px) {
   .footer-last{
     margin-right: 0px !important;
   }
+ 
 }
 @media (min-width:992px) and (max-width: 1200px) {
+   .product-col{
+    padding-right: 60px !important;
+  }
   .services .col-lg-3{
     flex-direction: column;
     align-items: center;
@@ -2205,7 +2650,30 @@ height: 100%;
   }
   
 }
+@media (max-width: 992px) {
+  .product-col{
+    padding-right: 0px !important;
+  }
+  .product-left{
+  left: 50px;
+ 
+}
+.product-right{
+ 
+  right: 10px;
+
+}
+.product-col-two .product-left{
+  left:10px
+}
+.product-col-two .product-right{
+  right:50px
+}
+}
 @media (max-width: 768px) {
+   .services{
+      padding: 0px 10px !important;
+     }
     .megamenu-overlay {
         backdrop-filter: blur(2px);
     }
@@ -2222,7 +2690,20 @@ height: 100%;
     }
 }
  @media (max-width: 576px) {
- 
+  .baner-nav img{
+    width: auto;
+  }
+  .footer-rights p{
+    text-align: center !important;
+    margin-bottom: 5px !important;
+  }
+ .cart{
+  margin-left: 30px;
+ }
+ .cart::after {
+    left: -15px;
+   
+}
   .top{
     top: -15px;
     left: 0;
@@ -2254,6 +2735,9 @@ height: 100%;
   .baner-left{
     width: 100%;
     height: 100%;
+  }
+  .baner-sec .col-9, .baner-sec .col-3{
+    padding: 4px;
   }
   .baner-txt{
     right: 10px;
@@ -2329,3 +2813,231 @@ height: 100%;
     }
 
  }
+   .js-video-button {
+ position: relative;
+ width: 300px;
+ height: 300px;
+}
+    .js-video-button img{
+        width: 100%;
+        height: 100%;
+    }
+.baner-img::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: #ffffff;
+  -webkit-transform: scaleX(1);
+  -ms-transform: scaleX(1);
+  transform: scaleX(1);
+  -webkit-transform-origin: 90%;
+  -ms-transform-origin: 90%;
+  transform-origin: 90%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.baner-img:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: #ffffff;
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transform-origin: 90%;
+  -ms-transform-origin: 90%;
+  transform-origin: 90%;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.baner-img:hover::before {
+  -webkit-transform: scaleX(0);
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  opacity: 0.5;
+}
+.baner-img:hover::after {
+  -webkit-transform: scaleY(0);
+  -ms-transform: scaleY(0);
+  transform: scaleY(0);
+  opacity: 0.5;
+}
+
+.fix-items{
+  position: fixed;
+  bottom: 10px;
+  left: 20px;
+}
+
+.social-icons li {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+.social-icons a {
+  display: block;
+  background-color: hsl(304.44deg 100% 21.18%);
+          width: 45px;
+          height:45px;
+  padding: 0;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 9;
+  /* background-color: #f2f2f2; */
+  border-radius: 50%;
+  text-align: center;
+}
+.social-icons a .flip {
+  -webkit-transform: translateZ(19px);
+  transform: translateZ(19px);
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icons a span {
+    background-color: hsl(304.44deg 100% 21.18%);
+          width: 45px;
+          height: 45px;
+  display: block;
+
+  padding: 0;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 9;
+  margin: auto;
+  /* background-color: #f2f2f2; */
+  border-radius: 50%;
+
+  text-align: center;
+  line-height: 31px;
+}
+.social-icons a .flop {
+  display: block;
+  -webkit-transform: rotateX(-90deg) translateZ(-19px);
+  transform: rotateX(-90deg) translateZ(-19px);
+   display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.social-icons a:hover {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+ 
+}
+
+
+/* ==================== Services Hover Effect - Border Glow ==================== */
+.services .col-lg-3,
+.services .col-6 {
+    transition: all 0.4s ease;
+    cursor: pointer;
+    padding: 20px 10px;
+    border-radius: 15px;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.services .col-lg-3::before,
+.services .col-6::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(135deg, 
+        hsl(266.25deg 88.89% 21.18%) 0%, 
+        hsl(304.44deg 100% 21.18%) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.services .col-lg-3:hover,
+.services .col-6:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.services .col-lg-3:hover::before,
+.services .col-6:hover::before {
+    opacity: 1;
+}
+
+.services-img {
+    transition: all 0.4s ease;
+}
+
+.services .col-lg-3:hover .services-img,
+.services .col-6:hover .services-img {
+    transform: scale(1.08);
+}
+
+.services-txt h4 {
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.services .col-lg-3:hover .services-txt h4,
+.services .col-6:hover .services-txt h4 {
+    color: hsl(266.25deg 88.89% 21.18%);
+}
+
+.services-txt h4::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        hsl(266.25deg 88.89% 21.18%) 0%, 
+        hsl(304.44deg 100% 21.18%) 100%);
+    transition: width 0.4s ease;
+}
+
+.services .col-lg-3:hover .services-txt h4::after,
+.services .col-6:hover .services-txt h4::after {
+    width: 100%;
+}
