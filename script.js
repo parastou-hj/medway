@@ -118,8 +118,12 @@ $(document).ready(function() {
         nav: false,
         dots: false,
         responsive: {
-            0: { items: 1.4 },
-            992: { items: 3.5 }
+            0: { items: 1.6 },
+            768: { items: 2.6 },
+            820: { items: 2.8 },
+            992: { items: 2.6 },
+            1200: { items: 3.1 },
+            1300: { items: 3.5 }
         }
     });
 
@@ -133,8 +137,12 @@ $(document).ready(function() {
         nav: false,
         dots: false,
         responsive: {
-            0: { items: 1.4 },
-            992: { items: 3.5 }
+            0: { items: 1.6 },
+            768: { items: 2.6 },
+            820: { items: 2.8 },
+            992: { items: 2.6 },
+            1200: { items: 3.1 },
+            1300: { items: 3.5 }
         }
     });
 
